@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yndw.dvp.xtgl.auth.mapper.XtGgtzxxMapper">
+
+    <update id="updateAllCurrentUser">
+        update xt_ggtzxx set dqczybh = #{bh}
+    </update>
+    <insert id="insertRelation">
+        insert into xt_ggtz_czy(ggbh,czybh,zt) VALUES
+        <foreach collection="ids" separator="," item="item">
+            (#{ggbh},#{item},0)
+        </foreach>
+    </insert>
+    <select id="queryPage" resultType="com.yndw.dvp.xtgl.auth.model.XtGgtzxx">
+        select n.ggbt,n.ggnr,n.jjdj,n.czsj,n.fbzt,ne.zt ggzt ,n.cjrbh,n.cjrmc,n.dqczybh,n.bh
+        from xt_ggtzxx n
+        left join xt_czyxx e on n.dqczybh = e.bh
+        left join xt_ggtz_czy ne on n.bh = ne.ggbh
+        <where>
+            <if test="true">
+                and ne.czybh = #{bh}
+            </if>
+            <if test="endData!=null">
+                and n.czsj >= #{startData}
+            </if>
+            <if test="endData!=null">
+                and #{endData} >= n.czsj
+            </if>
+            <if test="queryParam.jjdj !='' and queryParam.jjdj != null">
+                and n.jjdj = #{queryParam.jjdj}
+            </if>
+            <if test="queryParam.ggzt !=''and queryParam.ggzt !=null">
+                and ne.zt = #{queryParam.ggzt}
+            </if>
+        </where>
+        order by ne.zt asc ,n.jjdj asc, n.czsj desc
+    </select>
+    <update id="read">
+        update xt_ggtz_czy set zt = 1
+        where ggbh = #{ggbh} and czybh = #{id}
+    </update>
+</mapper>

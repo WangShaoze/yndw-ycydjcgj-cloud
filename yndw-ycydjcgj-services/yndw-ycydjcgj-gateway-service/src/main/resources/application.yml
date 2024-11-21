@@ -1,0 +1,102 @@
+dvp:
+  oauth2:
+    token:
+      store:
+        type: redis
+  security:
+    ignore:
+      # 忽略认证的地址
+      httpUrls: >
+        /yndw/oauth/yndw-ycydjcgj-oauth-service/V1/oauth2/**,
+        /yndw/oauth/yndw-ycydjcgj-oauth-service/V1/validataCode/**,
+        /yndw/sjdl/yndw-ycydjcgj-sjdl-sevice/V1/dlyh/saveUser,
+        /yndw/xtgl/auth/yndw-ycydjcgj-xtgl-auth-service/V1/czyxx/checkDefaultDlmm,
+        /yndw/xtgl/auth/yndw-ycydjcgj-xtgl-auth-service/V1/czyxx/updateDlmm
+    auth:
+      urlPermission:
+        #是否开启url级别权限
+        enable: true
+        #配置只进行登录认证，不进行url权限认证的api
+        ignoreUrls: >
+          /yndw/xtgl/auth/yndw-ycydjcgj-xtgl-auth-service/V1/czyxx/checkDefaultDlmm,
+          /yndw/xtgl/auth/yndw-ycydjcgj-xtgl-auth-service/V1/czyxx/getUserDetailsByCurrentLoginUser,
+          /yndw/xtgl/auth/yndw-ycydjcgj-xtgl-auth-service/V1/czyxx/getCzyxxByCurrentLoginUser,
+          /yndw/xtgl/auth/yndw-ycydjcgj-xtgl-auth-service/V1/gnxx/getAuthGnxxMenuByLoginUser,
+          /yndw/xtgl/auth/yndw-ycydjcgj-xtgl-auth-service/V1/czyqx/addGn
+
+        #白名单
+        includeClientIds:
+          - webApp
+      renew:
+        #是否开启token自动续签（目前只有redis实现）
+        enable: false
+        #白名单
+        includeClientIds:
+          - webApp
+
+zuul:
+  ribbon-isolation-strategy: thread
+  ribbon:
+    eager-load:
+      enabled: true
+    threadPool:
+      useSeparateThreadPools: true
+      threadPoolKeyPrefix: yndw-ycydjcgj-gateway-service
+  #关闭重试
+  retryable: false
+  ignored-headers: Access-Control-Allow-Credentials,Access-Control-Allow-Origin,Access-Control-Allow-Methods
+  add-host-header: true
+  host:
+    max-per-route-connections: 200
+    max-total-connections: 500
+    connect-timeout-millis: 2000
+    socket-timeout-millis: 4000
+  routes:
+    yndw-ycydjcgj-oauth-service:
+      path: /yndw/oauth/yndw-ycydjcgj-oauth-service/V1/**
+      service-id: yndw-ycydjcgj-oauth-service
+      strip-prefix: false
+      sensitive-headers: '*'
+      custom-sensitive-headers: true
+    yndw-ycydjcgj-xtgl-auth-service:
+      path: /yndw/xtgl/auth/yndw-ycydjcgj-xtgl-auth-service/V1/**
+      service-id: yndw-ycydjcgj-xtgl-auth-service
+      strip-prefix: false
+      sensitive-headers: '*'
+      custom-sensitive-headers: true
+    yndw-ycydjcgj-xtgl-dm-service:
+      path: /yndw/xtgl/dm/yndw-ycydjcgj-xtgl-dm-service/V1/**
+      service-id: yndw-ycydjcgj-xtgl-dm-service
+      strip-prefix: false
+      sensitive-headers: '*'
+      custom-sensitive-headers: true
+    yndw-ycydjcgj-xtgl-log-service:
+      path: /yndw/xtgl/log/yndw-ycydjcgj-xtgl-log-service/V1/**
+      service-id: yndw-ycydjcgj-xtgl-log-service
+      strip-prefix: false
+      sensitive-headers: '*'
+      custom-sensitive-headers: true
+    yndw-ycydjcgj-xtgl-file-service:
+      path: /yndw/xtgl/file/yndw-ycydjcgj-xtgl-file-service/V1/**
+      service-id: yndw-ycydjcgj-xtgl-file-service
+      strip-prefix: false
+      sensitive-headers: '*'
+      custom-sensitive-headers: true
+
+
+
+  ssl-hostname-validation-enabled: false
+
+hystrix:
+  threadpool:
+    default:
+      coreSize: 200
+      maximumSize: 2000
+      allowMaximumSizeToDivergeFromCoreSize: true
+      maxQueueSize: -1
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000

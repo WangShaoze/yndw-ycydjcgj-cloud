@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.yndw.dvp.common.ribbon.RibbonAutoConfigure,\
+com.yndw.dvp.common.ribbon.FeignAutoConfigure,\
+com.yndw.dvp.common.ribbon.RestTemplateAutoConfigure

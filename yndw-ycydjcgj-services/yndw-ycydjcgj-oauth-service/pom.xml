@@ -1,0 +1,121 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.yndw</groupId>
+		<artifactId>yndw-ycydjcgj-services</artifactId>
+		<version>1.0</version>
+	</parent>
+	<artifactId>yndw-ycydjcgj-oauth-service</artifactId>
+	<description>认证中心</description>
+	<dependencies>
+
+		<!-- TSF 启动器 -->
+		<dependency>
+			<groupId>com.tencent.tsf</groupId>
+			<artifactId>spring-cloud-tsf-starter</artifactId>
+		</dependency>
+		<!-- TSF Auth 权限管理 -->
+		<dependency>
+			<groupId>com.tencent.tsf</groupId>
+			<artifactId>spring-cloud-tsf-auth</artifactId>
+		</dependency>
+		<!-- TSF Ribbon 客户端路由 -->
+		<dependency>
+			<groupId>com.tencent.tsf</groupId>
+			<artifactId>spring-cloud-tsf-route</artifactId>
+		</dependency>
+		<!-- TSF Logger 日志 -->
+		<dependency>
+			<groupId>com.tencent.tsf</groupId>
+			<artifactId>spring-cloud-tsf-logger</artifactId>
+		</dependency>
+		<!-- TSF swagger -->
+		<dependency>
+			<groupId>com.tencent.tsf</groupId>
+			<artifactId>spring-cloud-tsf-swagger</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.yndw</groupId>
+			<artifactId>yndw-ycydjcgj-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.yndw</groupId>
+			<artifactId>yndw-ycydjcgj-common-base</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.yndw</groupId>
+			<artifactId>yndw-ycydjcgj-common-auth</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.yndw</groupId>
+			<artifactId>yndw-ycydjcgj-common-db</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.yndw</groupId>
+			<artifactId>yndw-ycydjcgj-common-redis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.yndw</groupId>
+			<artifactId>yndw-ycydjcgj-common-log</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.yndw</groupId>
+			<artifactId>yndw-ycydjcgj-common-ribbon</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.social</groupId>
+			<artifactId>spring-social-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+		</dependency>
+		<!-- 验证码生成工具 -->
+		<dependency>
+			<groupId>com.github.whvcse</groupId>
+			<artifactId>easy-captcha</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.session</groupId>
+			<artifactId>spring-session-data-redis</artifactId>
+		</dependency>
+
+		<!-- hutool java工具类库  -->
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-all</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.yndw.dvp.OAuthAppRun</mainClass>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

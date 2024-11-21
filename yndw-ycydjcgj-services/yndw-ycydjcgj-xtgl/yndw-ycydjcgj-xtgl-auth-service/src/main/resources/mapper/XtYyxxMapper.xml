@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yndw.dvp.xtgl.auth.mapper.XtYyxxMapper">
+
+    <resultMap id="listXtYyFlCount" type="com.yndw.dvp.xtgl.auth.dto.XtYyFlCountDto" >
+        <result column="yylb" property="yylb" />
+        <result column="yyCount" property="yyCount" />
+    </resultMap>
+
+    <update id="updateYyztdm">
+        update xt_yyxx set yyztdm = #{yyztdm},ztbgsj=now(),czrbh=#{czrbh},czsj=now() where bh = #{bh}
+    </update>
+
+    <update id="updateAvatar">
+        update xt_yyxx set yytb = #{yytb},czrbh=#{czrbh},czsj=now() where bh = #{bh}
+    </update>
+
+    <select id="queryPage" resultType="com.yndw.dvp.xtgl.auth.model.XtYyxx">
+        select distinct a.*
+        from xt_yyxx a join xt_czyqx b on a.bh=b.yybh
+    </select>
+
+    <select id="WsqQueryPage" resultType="com.yndw.dvp.xtgl.auth.model.XtYyxx">
+        SELECT *
+        FROM xt_yyxx
+        WHERE bh NOT IN
+              (select d.bh AS bh
+               FROM (
+                        SELECT DISTINCT c.*
+                        FROM xt_czyqx a
+                                 JOIN xt_yyxx c ON a.yybh= c.bh
+                        UNION all
+                        SELECT *
+                        FROM xt_yyxx
+                    )
+                        AS d
+               group BY d.bh
+               HAVING COUNT(d.bh) > 1)
+    </select>
+
+    <select id="getYyxxNum" resultType="com.yndw.dvp.xtgl.auth.model.XtYyxx">
+        select * from xt_yyxx n where
+        <foreach collection="xtDm" separator="," item="item">
+            #{item} in n.yylb
+        </foreach>
+
+    </select>
+
+    <select id="yyxxCount" resultType="com.yndw.dvp.xtgl.auth.dto.XtYyxxCountDto">
+        select b.totalCount as totalCount,a.upCount as upCount,(b.totalCount - a.upCount) as downCount from (select count(*) as upCount from xt_yyxx where gwztdm = '1') as a, (select count(*) as totalCount from xt_yyxx) b
+    </select>
+
+    <select id="yyFlCount" resultType="com.yndw.dvp.xtgl.auth.dto.XtYyFlCountDto">
+        select count(*) as yyCount, yylb from xt_yyxx a WHERE yyztdm = #{yyztdm} GROUP BY yylb
+    </select>
+
+    <select id="yyJsfyyCount" resultType="com.yndw.dvp.xtgl.auth.dto.JsfYyxxCountDto">
+        SELECT a.bh,yyjsf,zzmc ,
+            COUNT(*) AS yyCount
+             ,SUM(case when b.yyztdm='1'then 1 ELSE 0 END) AS start
+             ,SUM(case when b.yyztdm='2'then 1 ELSE 0 END) AS stop
+        from xt_zzxx a  inner join xt_yyxx b ON(a.bh=b.yyjsf)
+        GROUP BY yyjsf
+    </select>
+
+    <select id="yyCjfyyCount" resultType="com.yndw.dvp.xtgl.auth.dto.CjfYyxxCountDto">
+        select a.zzmc,COUNT(*) AS yyCount
+             ,SUM(case when yyztdm='1'then 1 ELSE 0 END) AS start
+             ,SUM(case when yyztdm='2'then 1 ELSE 0 END) AS stop
+        from xt_zzxx a
+                 inner join xt_yyxx b
+                            on a.bh = b.yycjf
+        GROUP BY zzmc
+    </select>
+
+    <select id="findAuthYyxxList" resultType="com.yndw.dvp.xtgl.auth.model.XtYyxx">
+        select a.* from xt_yyxx a ,(select distinct yybh from xt_czyqx where czybh = #{czybh}) b where a.bh = b.yybh
+    </select>
+
+</mapper>
+

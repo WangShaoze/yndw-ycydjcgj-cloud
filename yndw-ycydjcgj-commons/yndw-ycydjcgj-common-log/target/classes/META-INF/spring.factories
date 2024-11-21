@@ -1,0 +1,8 @@
+org.springframework.context.ApplicationContextInitializer=\
+com.yndw.dvp.common.log.config.TtlMDCAdapterInitializer
+
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.yndw.dvp.common.log.config.LogAutoConfigure,\
+com.yndw.dvp.common.log.service.impl.LoggerAuditServiceImpl,\
+com.yndw.dvp.common.log.service.impl.DbAuditServiceImpl,\
+com.yndw.dvp.common.log.aspect.AuditLogAspect

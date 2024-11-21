@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/yndw-ycydjcgj-commons/yndw-ycydjcgj-common-auth/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yndw-ycydjcgj-commons/yndw-ycydjcgj-common-base/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yndw-ycydjcgj-commons/yndw-ycydjcgj-common-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yndw-ycydjcgj-commons/yndw-ycydjcgj-common-db/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yndw-ycydjcgj-commons/yndw-ycydjcgj-common-log/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yndw-ycydjcgj-commons/yndw-ycydjcgj-common-redis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yndw-ycydjcgj-commons/yndw-ycydjcgj-common-ribbon/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yndw-ycydjcgj-services/yndw-ycydjcgj-gateway-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yndw-ycydjcgj-services/yndw-ycydjcgj-oauth-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yndw-ycydjcgj-services/yndw-ycydjcgj-tool/yndw-ycydjcgj-tool-xxljobadmin-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yndw-ycydjcgj-services/yndw-ycydjcgj-xtgl/yndw-ycydjcgj-xtgl-auth-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yndw-ycydjcgj-services/yndw-ycydjcgj-xtgl/yndw-ycydjcgj-xtgl-dm-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yndw-ycydjcgj-services/yndw-ycydjcgj-xtgl/yndw-ycydjcgj-xtgl-file-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yndw-ycydjcgj-services/yndw-ycydjcgj-xtgl/yndw-ycydjcgj-xtgl-log-service/src/main/java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yndw.dvp.xtgl.auth.mapper.XtGwxxMapper">
+    <update id="updateZtdm">
+        update xt_gwxx set gwztdm = #{gwztdm},ztbgsj=now(),czrbh=#{czrbh},czsj=now() where bh = #{bh}
+    </update>
+
+    <delete id="deleteGwjsgxs">
+        delete from xt_gwjsgx where gwbh = #{gwbh}
+    </delete>
+
+    <delete id="deleteByZzbh">
+        delete from xt_gwxx where zzbh = #{zzbh}
+    </delete>
+
+    <delete id="deleteGwjsgxsByZzbh">
+        delete from xt_gwjsgx where gwbh in (select gwbh from xt_gwxx where zzbh = #{zzbh})
+    </delete>
+
+    <select id="gwxxCount" resultType="com.yndw.dvp.xtgl.auth.dto.XtGwxxCountDto">
+        select b.totalCount as totalCount,a.upCount as upCount,(b.totalCount - a.upCount) as downCount from (select count(*) as upCount from xt_gwxx where gwztdm = '1') as a, (select count(*) as totalCount from xt_gwxx) b
+    </select>
+</mapper>

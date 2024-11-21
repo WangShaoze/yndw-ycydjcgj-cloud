@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.yndw.dvp.common.auth.config.SecurityPropertiesConfig,\
+com.yndw.dvp.common.auth.store.AuthRedisTokenStore

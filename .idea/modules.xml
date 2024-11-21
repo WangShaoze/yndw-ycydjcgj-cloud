@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/yndw-ycydjcgj-commons/yndw-ycydjcgj-common-auth/yndw-ycydjcgj-common-auth.iml" filepath="$PROJECT_DIR$/yndw-ycydjcgj-commons/yndw-ycydjcgj-common-auth/yndw-ycydjcgj-common-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yndw-ycydjcgj-commons/yndw-ycydjcgj-common-base/yndw-ycydjcgj-common-base.iml" filepath="$PROJECT_DIR$/yndw-ycydjcgj-commons/yndw-ycydjcgj-common-base/yndw-ycydjcgj-common-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yndw-ycydjcgj-commons/yndw-ycydjcgj-common-core/yndw-ycydjcgj-common-core.iml" filepath="$PROJECT_DIR$/yndw-ycydjcgj-commons/yndw-ycydjcgj-common-core/yndw-ycydjcgj-common-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yndw-ycydjcgj-commons/yndw-ycydjcgj-common-db/yndw-ycydjcgj-common-db.iml" filepath="$PROJECT_DIR$/yndw-ycydjcgj-commons/yndw-ycydjcgj-common-db/yndw-ycydjcgj-common-db.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yndw-ycydjcgj-commons/yndw-ycydjcgj-common-log/yndw-ycydjcgj-common-log.iml" filepath="$PROJECT_DIR$/yndw-ycydjcgj-commons/yndw-ycydjcgj-common-log/yndw-ycydjcgj-common-log.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yndw-ycydjcgj-commons/yndw-ycydjcgj-common-redis/yndw-ycydjcgj-common-redis.iml" filepath="$PROJECT_DIR$/yndw-ycydjcgj-commons/yndw-ycydjcgj-common-redis/yndw-ycydjcgj-common-redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yndw-ycydjcgj-commons/yndw-ycydjcgj-common-ribbon/yndw-ycydjcgj-common-ribbon.iml" filepath="$PROJECT_DIR$/yndw-ycydjcgj-commons/yndw-ycydjcgj-common-ribbon/yndw-ycydjcgj-common-ribbon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yndw-ycydjcgj-config/yndw-ycydjcgj-config.iml" filepath="$PROJECT_DIR$/yndw-ycydjcgj-config/yndw-ycydjcgj-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yndw-ycydjcgj-services/yndw-ycydjcgj-gateway-service/yndw-ycydjcgj-gateway-service.iml" filepath="$PROJECT_DIR$/yndw-ycydjcgj-services/yndw-ycydjcgj-gateway-service/yndw-ycydjcgj-gateway-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yndw-ycydjcgj-services/yndw-ycydjcgj-oauth-service/yndw-ycydjcgj-oauth-service.iml" filepath="$PROJECT_DIR$/yndw-ycydjcgj-services/yndw-ycydjcgj-oauth-service/yndw-ycydjcgj-oauth-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yndw-ycydjcgj-services/yndw-ycydjcgj-tool/yndw-ycydjcgj-tool-xxljobadmin-service/yndw-ycydjcgj-tool-xxljobadmin-service.iml" filepath="$PROJECT_DIR$/yndw-ycydjcgj-services/yndw-ycydjcgj-tool/yndw-ycydjcgj-tool-xxljobadmin-service/yndw-ycydjcgj-tool-xxljobadmin-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yndw-ycydjcgj-services/yndw-ycydjcgj-xtgl/yndw-ycydjcgj-xtgl-auth-service/yndw-ycydjcgj-xtgl-auth-service.iml" filepath="$PROJECT_DIR$/yndw-ycydjcgj-services/yndw-ycydjcgj-xtgl/yndw-ycydjcgj-xtgl-auth-service/yndw-ycydjcgj-xtgl-auth-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yndw-ycydjcgj-services/yndw-ycydjcgj-xtgl/yndw-ycydjcgj-xtgl-dm-service/yndw-ycydjcgj-xtgl-dm-service.iml" filepath="$PROJECT_DIR$/yndw-ycydjcgj-services/yndw-ycydjcgj-xtgl/yndw-ycydjcgj-xtgl-dm-service/yndw-ycydjcgj-xtgl-dm-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yndw-ycydjcgj-services/yndw-ycydjcgj-xtgl/yndw-ycydjcgj-xtgl-file-service/yndw-ycydjcgj-xtgl-file-service.iml" filepath="$PROJECT_DIR$/yndw-ycydjcgj-services/yndw-ycydjcgj-xtgl/yndw-ycydjcgj-xtgl-file-service/yndw-ycydjcgj-xtgl-file-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yndw-ycydjcgj-services/yndw-ycydjcgj-xtgl/yndw-ycydjcgj-xtgl-log-service/yndw-ycydjcgj-xtgl-log-service.iml" filepath="$PROJECT_DIR$/yndw-ycydjcgj-services/yndw-ycydjcgj-xtgl/yndw-ycydjcgj-xtgl-log-service/yndw-ycydjcgj-xtgl-log-service.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yndw.dvp.xtgl.dm.mapper.XtDmflMapper">
+
+    <update id="updateZtdm">
+        update xt_dmfl set ztdm = #{ztdm},ztbgsj=now(),czrbh=#{czrbh},czsj=now() where bh = #{bh}
+    </update>
+
+</mapper>

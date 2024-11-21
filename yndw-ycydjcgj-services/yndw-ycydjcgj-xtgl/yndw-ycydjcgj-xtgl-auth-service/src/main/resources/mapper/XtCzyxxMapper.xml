@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yndw.dvp.xtgl.auth.mapper.XtCzyxxMapper">
+
+    <update id="updateDlmm">
+        update xt_czyxx set dlmm = #{dlmm},czrbh=#{czrbh},czsj=now() where bh = #{bh}
+    </update>
+
+    <update id="updateZtdm">
+        update xt_czyxx set czyztdm = #{czyztdm},ztbgsj=now(),czrbh=#{czrbh},czsj=now() where bh = #{bh}
+    </update>
+
+    <update id="updateAvatar">
+        update xt_czyxx set avatar = #{avatar},czrbh=#{czrbh},czsj=now() where bh = #{bh}
+    </update>
+
+    <delete id="deleteCzyqxs">
+        delete from xt_czyqx where czybh = #{czybh}
+    </delete>
+
+    <delete id="deleteByZzbh">
+        delete from xt_czyxx where zzbh = #{zzbh}
+    </delete>
+
+    <delete id="deleteCzyqxsByZzbh">
+        delete from xt_czyqx where czybh in (select czybh from xt_czyxx where zzbh = #{zzbh})
+    </delete>
+
+    <select id="getByBh" resultType="com.yndw.dvp.common.core.model.SecurityUser">
+        select bh,zzbh,gwbh,dlzh,dlmm,czyztdm,dlmmycwcs,dlmmdyccwsj,dlmmzdcwcs,ztbgsj from xt_czyxx where bh = #{bh}
+    </select>
+
+    <select id="getByDlzh" resultType="com.yndw.dvp.common.core.model.SecurityUser">
+        select bh,zzbh,gwbh,dlzh,dlmm,czyztdm,dlmmycwcs,dlmmdyccwsj,dlmmzdcwcs,ztbgsj from xt_czyxx where dlzh = #{dlzh}
+    </select>
+
+    <select id="queryPage" resultType="com.yndw.dvp.xtgl.auth.dto.XtCzyxxDto">
+        select a.*,b.zzmc as zzmc,c.gwmc as gwmc from xt_czyxx a
+        left join xt_zzxx b on a.zzbh = b.bh
+        left join xt_gwxx c on a.gwbh = c.bh
+        <where>
+            <if test="queryParam.czymc!=null and queryParam.czymc!=''">
+                a.czymc like concat('%',#{queryParam.czymc},'%')
+            </if>
+            <choose>
+                <when test='queryParam.type!=null and queryParam.type=="2"'>
+                    <if test="queryParam.zzbh!=null and queryParam.zzbh!=''">
+                        and (b.sjbhs LIKE CONCAT('%,', #{queryParam.zzbh}, ',%') or a.zzbh = #{queryParam.zzbh})
+                    </if>
+                </when>
+                <otherwise>
+                    <if test="queryParam.zzbh!=null and queryParam.zzbh!=''">
+                        and a.zzbh = #{queryParam.zzbh}
+                    </if>
+                </otherwise>
+            </choose>
+        </where>
+        order by a.cjsj desc
+    </select>
+
+    <select id="getMoreById" resultType="com.yndw.dvp.xtgl.auth.dto.XtCzyxxDto">
+        select a.*,b.zzmc as zzmc,b.sjbhs as sjbhs,c.gwmc as gwmc from xt_czyxx a
+        left join xt_zzxx b on a.zzbh = b.bh
+        left join xt_gwxx c on a.gwbh = c.bh
+        where a.bh = #{bh}
+    </select>
+
+    <select id="queryList4Xm" resultType="com.yndw.dvp.xtgl.auth.model.XtCzyxx">
+        select bh,zzbh,gwbh,dlzh,dlmm,czygh,czymc,bgdhhm,sjhm,xbdm,
+        csrq,zc,zw,dw,dlmmycwcs,dlmmzdcwcs,wzkf,czyztdm,ztbgsj,cjrbh,
+        cjsj,czrbh,czsj,email,avatar
+        from xt_czyxx
+        where bh in
+        <foreach collection="bhArry" item="bh" open="(" separator="," close=")">
+            #{bh}
+        </foreach>
+    </select>
+    
+    <select id="czyxxCount" resultType="com.yndw.dvp.xtgl.auth.dto.XtCzyxxCountDto">
+        select b.totalCount as totalCount,a.disableCount as disableCount,(b.totalCount - a.disableCount) as downCount from (select count(*) as disableCount from xt_czyxx where gwztdm = '1') as a, (select count(*) as totalCount from xt_czyxx) b
+    </select>
+
+
+
+    <select id="getCzyxxByGwbh" resultType="com.yndw.dvp.xtgl.auth.model.XtCzyxx">
+        SELECT *
+        from xt_czyxx
+        where gwbh = #{gwbh}
+    </select>
+</mapper>

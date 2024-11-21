@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.yndw</groupId>
+        <artifactId>yndw-ycydjcgj-cloud</artifactId>
+        <version>1.0</version>
+    </parent>
+    <artifactId>yndw-ycydjcgj-commons</artifactId>
+    <description>通用组件</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>yndw-ycydjcgj-common-base</module>
+        <module>yndw-ycydjcgj-common-auth</module>
+        <module>yndw-ycydjcgj-common-core</module>
+        <module>yndw-ycydjcgj-common-db</module>
+        <module>yndw-ycydjcgj-common-log</module>
+        <module>yndw-ycydjcgj-common-redis</module>
+        <module>yndw-ycydjcgj-common-ribbon</module>
+    </modules>
+</project>

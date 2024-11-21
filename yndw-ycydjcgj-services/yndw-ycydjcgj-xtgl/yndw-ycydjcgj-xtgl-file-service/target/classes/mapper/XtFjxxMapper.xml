@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yndw.dvp.xtgl.file.mapper.XtFjxxMapper">
+    <select id="queryByFjfz" resultType="com.yndw.dvp.xtgl.file.model.XtFjxx">
+        SELECT * FROM xt_fjxx WHERE fjfz = #{queryParam.fjfz}
+    </select>
+</mapper>

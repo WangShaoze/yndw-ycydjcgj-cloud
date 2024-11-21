@@ -1,0 +1,47 @@
+{
+  "groups": [
+    {
+      "name": "dvp.mybatis-plus.auto-fill",
+      "type": "com.yndw.dvp.common.db.properties.MybatisPlusAutoFillProperties",
+      "sourceType": "com.yndw.dvp.common.db.properties.MybatisPlusAutoFillProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "dvp.mybatis-plus.auto-fill.create-time-field",
+      "type": "java.lang.String",
+      "description": "创建时间字段名",
+      "sourceType": "com.yndw.dvp.common.db.properties.MybatisPlusAutoFillProperties",
+      "defaultValue": "cjsj"
+    },
+    {
+      "name": "dvp.mybatis-plus.auto-fill.enable-insert-fill",
+      "type": "java.lang.Boolean",
+      "description": "是否开启了插入填充",
+      "sourceType": "com.yndw.dvp.common.db.properties.MybatisPlusAutoFillProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "dvp.mybatis-plus.auto-fill.enable-update-fill",
+      "type": "java.lang.Boolean",
+      "description": "是否开启了更新填充",
+      "sourceType": "com.yndw.dvp.common.db.properties.MybatisPlusAutoFillProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "dvp.mybatis-plus.auto-fill.enabled",
+      "type": "java.lang.Boolean",
+      "description": "是否开启自动填充字段",
+      "sourceType": "com.yndw.dvp.common.db.properties.MybatisPlusAutoFillProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "dvp.mybatis-plus.auto-fill.update-time-field",
+      "type": "java.lang.String",
+      "description": "更新时间字段名",
+      "sourceType": "com.yndw.dvp.common.db.properties.MybatisPlusAutoFillProperties",
+      "defaultValue": "czsj"
+    }
+  ],
+  "hints": []
+}

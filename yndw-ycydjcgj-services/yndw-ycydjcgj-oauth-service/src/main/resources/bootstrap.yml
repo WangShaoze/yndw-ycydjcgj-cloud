@@ -1,0 +1,10 @@
+server:
+  port: 8090
+  servlet:
+    session:
+      cookie:
+        name: OAUTH2SESSION
+
+spring:
+  application:
+    name: yndw-ycydjcgj-oauth-service

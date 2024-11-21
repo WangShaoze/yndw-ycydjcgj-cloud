@@ -1,0 +1,49 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://${dvp.datasource.ip}:${dvp.datasource.port}/xxzx-xxljob?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+    username: ${dvp.datasource.username}
+    password: ${dvp.datasource.password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mvc:
+    servlet:
+      load-on-startup: 0
+    static-path-pattern: /static/**
+  resources:
+    static-locations: classpath:/static/
+  freemarker:
+    charset: UTF-8
+    request-context-attribute: request
+    settings:
+      number_format: 0.##########
+    suffix: .ftl
+    templateLoaderPath: classpath:/templates/
+  mail:
+    host: smtp.qq.com
+    password: xxx
+    port: 25
+    properties:
+      mail:
+        smtp:
+          auth: true
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+          starttls:
+            enable: true
+            required: true
+    username: 2847832624@qq.com
+
+mybatis-plus:
+  mapper-locations: classpath:/mybatis-mapper/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.xxl.job.admin.core.model
+
+xxl:
+  job:
+    i18n: zh_CN
+    logretentiondays: 30
+    triggerpool:
+      fast:
+        max: 200
+      slow:
+        max: 100

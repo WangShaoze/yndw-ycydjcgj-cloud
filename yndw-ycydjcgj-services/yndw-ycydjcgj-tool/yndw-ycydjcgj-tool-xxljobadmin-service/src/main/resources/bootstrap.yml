@@ -1,0 +1,7 @@
+server:
+  port: 18094
+  servlet:
+    context-path: /yndw-ycydjcgj-tool-xxljobadmin
+spring:
+  application:
+    name: yndw-ycydjcgj-tool-xxljobadmin-service

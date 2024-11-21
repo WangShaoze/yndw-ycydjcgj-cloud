@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yndw.dvp.xtgl.auth.mapper.YuJinMapper">
+    <update id="updateByEntity" parameterType="com.yndw.dvp.xtgl.auth.model.YuJin">
+        update yu_jin set yjyjz = #{yuJin.yjyjz},erjyjz=#{yuJin.erjyjz},update_id=#{yuJin.updateId},update_name=#{yuJin.updateName} where id = #{yuJin.id}
+    </update>
+
+    <select id="getYuJinEntity" resultType="com.yndw.dvp.xtgl.auth.model.YuJin">
+        SELECT * FROM yu_jin
+        WHERE
+              id=1
+    </select>
+</mapper>

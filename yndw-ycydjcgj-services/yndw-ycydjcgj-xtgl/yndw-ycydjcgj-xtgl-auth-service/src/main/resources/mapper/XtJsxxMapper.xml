@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yndw.dvp.xtgl.auth.mapper.XtJsxxMapper">
+
+    <update id="updateZtdm">
+        update xt_jsxx set jsztdm = #{jsztdm},ztbgsj=now(),czrbh=#{czrbh},czsj=now() where bh = #{bh}
+    </update>
+
+    <update id="updateSjbhs">
+        UPDATE xt_jsxx SET
+        sjbh = #{sjbh},
+        sjbhs = #{sjbhs}
+        WHERE bh = #{bh}
+    </update>
+
+    <select id="jsxxCount" resultType="com.yndw.dvp.xtgl.auth.dto.XtJsxxCountDto">
+        select b.totalCount as totalCount,a.disableCount as disableCount,(b.totalCount - a.disableCount) as downCount from (select count(*) as disableCount from xt_jsxx where gwztdm = '1') as a, (select count(*) as totalCount from xt_jsxx) b
+    </select>
+
+    <delete id="deleteCzyqxs">
+        delete from xt_czyqx where jsbh = #{jsbh}
+    </delete>
+
+    <delete id="deleteJsgngxs">
+        delete from xt_jsgngx where jsbh = #{jsbh}
+    </delete>
+
+    <delete id="deleteGwjsgxs">
+        delete from xt_gwjsgx where jsbh = #{jsbh}
+    </delete>
+</mapper>

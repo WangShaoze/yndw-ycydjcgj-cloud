@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yndw.dvp.xtgl.auth.mapper.XtCzyqxMapper">
+
+    <select id="getTopYy6" resultType="com.yndw.dvp.xtgl.auth.dto.CzyqxDto">
+        SELECT yybh,SUM(usecount) usecount
+        from xt_czyqx
+        where 1=1
+        <if test="czybh!=null and czybh!=''">
+            and czybh=#{czybh}
+        </if>
+        GROUP BY yybh ORDER BY usecount desc LIMIT 6
+    </select>
+
+    <select id="getGnbhsByCzybh" resultType="java.lang.String">
+        select distinct gnbh
+        from xt_czyqx
+        where czybh = #{czybh}
+    </select>
+
+    <select id="getGnbhsByGwbh" resultType="java.lang.String">
+        select distinct gnbh
+        from xt_czyqx
+        where jsbh in (select jsbh from xt_gwjsgx where gwbh = #{gwbh})
+    </select>
+
+    <select id="getYybhsByCzybh" resultType="java.lang.String">
+        select distinct ssyybh
+        from xt_gnxx a
+                 left join (select gnbh from xt_czyqx where czybh = #{czybh}) as b on a.bh = b.gnbh
+    </select>
+
+    <delete id="deleteCzyGnxx">
+        delete
+        from xt_czyqx
+        where czybh = #{czybh}
+
+        <if test="type != 0">
+            and jsbh != '0';
+        </if>
+        <if test="type == 0">
+            and jsbh = '0';
+        </if>
+    </delete>
+
+    <update id="deleteCzyqxGnxx">
+        delete from xt_czyqx
+        <where>
+            <if test="jsbh != null">
+                and jsbh = #{jsbh}
+            </if>
+            <if test="gnbh != null">
+                and gnbh = #{gnbh}
+            </if>
+        </where>
+    </update>
+
+    <select id="getCzybh" resultType="java.lang.String">
+        SELECT DISTINCT bh
+        FROM xt_czyxx
+        WHERE gwbh IN (SELECT DISTINCT gwbh FROM xt_gwjsgx WHERE jsbh = #{jsbh})
+    </select>
+
+    <select id="getJsbh" resultType="java.lang.String">
+        SELECT jsbh FROM xt_gwjsgx WHERE gwbh = #{gwbh}
+    </select>
+
+    <select id="findGnxxByCzybh" resultType="com.yndw.dvp.xtgl.auth.model.XtGnxx">
+        select distinct t.* from xt_gnxx t
+        left join xt_czyqx r on r.gnbh = t.bh
+        where
+        r.czybh = #{czybh}
+        <if test="gnlxdm != null">
+            and t.gnlxdm = #{gnlxdm}
+        </if>
+        ORDER BY djmksxh ASC
+    </select>
+
+    <update id="gnadd">
+        UPDATE xt_czyqx SET usecount =usecount + 1
+        <where>
+            <if test="jsbh != null">
+                and jsbh = #{jsbh}
+            </if>
+            <if test="gnbh != null">
+                and gnbh =#{gnbh}
+            </if>
+            <if test="czybh != null">
+                and czybh = #{czybh}
+            </if>
+        </where>
+    </update>
+
+    <insert id="saveWhenSaveCzy">
+        insert into xt_czyqx(jsbh, czybh, gnbh, usecount, yybh)
+        select #{jsbh}, #{czybh}, #{gnbh}, 0, bh as yybh from xt_gnxx where bh = #{gnbh}
+    </insert>
+
+    <!--  获取用户使用最多的域应用  -->
+    <select id="descYylb" resultType="com.yndw.dvp.xtgl.auth.model.XtCzyqx">
+        SELECT yylb jsbh,IF(SUM(usecount) IS NULL,0,SUM(usecount)) usecount FROM xt_yyxx xx
+        LEFT JOIN xt_czyqx qx  ON qx.yybh = xx.bh
+        WHERE czybh = #{czybh}
+        GROUP BY yylb
+        ORDER BY usecount DESC;
+    </select>
+
+    <select id="gnTopten" resultType="com.yndw.dvp.xtgl.auth.dto.GnTopDto">
+        SELECT b.*,a.usecount,c.yymc
+        from xt_czyqx a
+        left join xt_gnxx b ON (b.bh = a.gnbh)
+        LEFT JOIN xt_yyxx c  ON(c.bh =a.yybh)
+        <where>
+            <if test="czybh != null">
+                and czybh = #{czybh}
+            </if>
+        </where>
+        ORDER BY a.usecount Desc LIMIT 8
+    </select>
+    <!--  应用授权  -->
+    <insert id="saveCzyqx">
+        INSERT INTO xt_czyqx(jsbh,czybh,usecount,yybh,gnbh)
+        VALUES (#{jsbh},#{czybh},#{usecount},#{yybh},#{gnbh});
+    </insert>
+
+
+    <delete id="deleteCzyqxByJsbhs">
+        delete from xt_czyqx where jsbh in
+        <foreach collection="jsbhList" item="jsbh" open="(" separator="," close=")">
+            #{jsbh}
+        </foreach> ;
+    </delete>
+</mapper>

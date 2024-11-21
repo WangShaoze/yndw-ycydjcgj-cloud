@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yndw.dvp.xtgl.auth.mapper.XtJsgngxMapper">
+
+    <update id="deleteJsxxGnxx">
+        delete from xt_jsgngx
+        <where>
+            <if test="jsbh != null">
+                and jsbh = #{jsbh}
+            </if>
+            <if test="gnbh != null">
+                and gnbh = #{gnbh}
+            </if>
+        </where>
+    </update>
+
+    <select id="findGnbhsByJsbh" resultType="java.lang.String">
+        select gnbh from xt_jsgngx where jsbh = #{jsbh}
+    </select>
+
+    <select id="getJsgngxByJsbh" resultType="com.yndw.dvp.xtgl.auth.model.XtJsgngx">
+        select jsbh,gnbh from xt_jsgngx where 1=1
+        <if test="jsbhList != null and jsbhList.size() != 0">
+            and jsbh in
+            <foreach collection="jsbhList" item="item" index="index" open="(" separator="," close=")" >
+                #{item}
+            </foreach>
+        </if>
+    </select>
+
+    <select id="findGnxxByJsxxs" resultType="com.yndw.dvp.xtgl.auth.model.XtGnxx">
+        select distinct t.* from xt_gnxx t
+        inner join xt_jsgngx r on r.gnbh = t.bh
+        where 1=1
+        <if test="jsbhs != null and jsbhs.size() != 0">
+            and r.jsbh in
+            <foreach collection="jsbhs" item="item" index="index" open="(" separator="," close=")" >
+                #{item}
+            </foreach>
+        </if>
+        <if test="gnlxdm != null">
+            and t.gnlxdm = #{gnlxdm}
+        </if>
+        and t.gnztdm != 2
+        ORDER BY djmksxh ASC
+    </select>
+
+    <select id="findGnxxByJsxx" resultType="com.yndw.dvp.xtgl.auth.model.XtGnxx">
+        select distinct t.* from xt_gnxx t
+        inner join xt_jsgngx r on r.gnbh = t.bh
+        where 1=1
+        <if test="jsbhs != null and jsbhs.size() != 0">
+            and r.jsbh in
+            <foreach collection="jsbhs" item="item" index="index" open="(" separator="," close=")" >
+                #{item}
+            </foreach>
+        </if>
+        <if test="gnlxdm != null">
+            and t.gnlxdm = #{gnlxdm}
+        </if>
+        <if test="yybh != null">
+            and t.ssyybh = #{yybh}
+        </if>
+        and t.gnztdm != 2
+        ORDER BY djmksxh ASC
+    </select>
+
+    <select id="findOwnGnxx" resultType="com.yndw.dvp.xtgl.auth.model.XtGnxx">
+        select distinct t.* from xt_gnxx t
+        inner join xt_czyqx r on r.gnbh = t.bh
+        where
+        r.czybh = #{czybh}
+        <if test="gnlxdm != null">
+            and t.gnlxdm = #{gnlxdm}
+        </if>
+        and t.gnztdm != 2
+        ORDER BY djmksxh ASC
+    </select>
+
+    <select id="findAllMenu" resultType="com.yndw.dvp.xtgl.auth.model.XtGnxx">
+        select distinct t.* from xt_gnxx t
+        inner join xt_jsgngx r on r.gnbh = t.bh
+        where 1=1
+        <if test="gnlxdm != null">
+            and t.gnlxdm = #{gnlxdm}
+        </if>
+        ORDER BY djmksxh ASC
+    </select>
+    <select id="yyxxBygnbh" resultType="java.lang.String">
+        select ssyybh from xt_gnxx where bh=#{gnbh}
+    </select>
+
+    <select id="getGnxxByJsbh" resultType="com.yndw.dvp.xtgl.auth.model.XtGnxx">
+        select * from xt_gnxx where bh in (select gnbh from xt_jsgngx where jsbh = #{jsbh} )
+
+    </select>
+</mapper>

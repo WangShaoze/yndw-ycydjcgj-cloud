@@ -1,0 +1,240 @@
+{
+  "groups": [
+    {
+      "name": "dvp.audit-log",
+      "type": "com.yndw.dvp.common.log.properties.AuditLogProperties",
+      "sourceType": "com.yndw.dvp.common.log.properties.AuditLogProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource",
+      "type": "com.yndw.dvp.common.log.properties.LogDbProperties",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "dvp.audit-log.datasource.allow-pool-suspension",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.auto-commit",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.catalog",
+      "type": "java.lang.String",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.connection-init-sql",
+      "type": "java.lang.String",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.connection-test-query",
+      "type": "java.lang.String",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.connection-timeout",
+      "type": "java.lang.Long",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.data-source-class-name",
+      "type": "java.lang.String",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.data-source-j-n-d-i",
+      "type": "java.lang.String",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.data-source-jndi-name",
+      "type": "java.lang.String",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.data-source-properties",
+      "type": "java.util.Properties",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.driver-class-name",
+      "type": "java.lang.String",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.health-check-properties",
+      "type": "java.util.Properties",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.health-check-registry",
+      "type": "java.lang.Object",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.idle-timeout",
+      "type": "java.lang.Long",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.initialization-fail-timeout",
+      "type": "java.lang.Long",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.is-allow-pool-suspension",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.is-auto-commit",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.is-isolate-internal-queries",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.is-read-only",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.is-register-mbeans",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.isolate-internal-queries",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.jdbc-url",
+      "type": "java.lang.String",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.leak-detection-threshold",
+      "type": "java.lang.Long",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.max-lifetime",
+      "type": "java.lang.Long",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.max-pool-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.maximum-pool-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.metric-registry",
+      "type": "java.lang.Object",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.metrics-tracker-factory",
+      "type": "com.zaxxer.hikari.metrics.MetricsTrackerFactory",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.min-idle",
+      "type": "java.lang.Integer",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.minimum-idle",
+      "type": "java.lang.Integer",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.password",
+      "type": "java.lang.String",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.pool-name",
+      "type": "java.lang.String",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.read-only",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.register-mbeans",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.scheduled-executor",
+      "type": "java.util.concurrent.ScheduledExecutorService",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.schema",
+      "type": "java.lang.String",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.sealed",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.transaction-isolation",
+      "type": "java.lang.String",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.transaction-isolation-name",
+      "type": "java.lang.String",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.unit-test",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.username",
+      "type": "java.lang.String",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.datasource.validation-timeout",
+      "type": "java.lang.Long",
+      "sourceType": "com.yndw.dvp.common.log.properties.LogDbProperties"
+    },
+    {
+      "name": "dvp.audit-log.enabled",
+      "type": "java.lang.Boolean",
+      "description": "是否开启审计日志",
+      "sourceType": "com.yndw.dvp.common.log.properties.AuditLogProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "dvp.audit-log.log-type",
+      "type": "java.lang.String",
+      "description": "日志记录类型(logger\/redis\/db\/es)",
+      "sourceType": "com.yndw.dvp.common.log.properties.AuditLogProperties"
+    }
+  ],
+  "hints": []
+}

@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.yndw.dvp.common.core.feign.fallback.SecurityUserServiceallbackFactory,\
+com.yndw.dvp.common.core.lock.LockAspect

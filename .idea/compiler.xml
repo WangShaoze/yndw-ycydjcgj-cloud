@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="yndw-ycydjcgj-common-auth" />
+        <module name="yndw-ycydjcgj-common-ribbon" />
+        <module name="yndw-ycydjcgj-xtgl-log-service" />
+        <module name="yndw-ycydjcgj-xtgl-file-service" />
+        <module name="yndw-ycydjcgj-common-base" />
+        <module name="yndw-ycydjcgj-xtgl-auth-service" />
+        <module name="yndw-ycydjcgj-common-db" />
+        <module name="yndw-ycydjcgj-xtgl-dm-service" />
+        <module name="yndw-ycydjcgj-common-redis" />
+        <module name="yndw-ycydjcgj-config" />
+        <module name="yndw-ycydjcgj-oauth-service" />
+        <module name="yndw-ycydjcgj-tool-xxljobadmin-service" />
+        <module name="yndw-ycydjcgj-common-log" />
+        <module name="yndw-ycydjcgj-common-core" />
+        <module name="yndw-ycydjcgj-gateway-service" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="yndw-ycydjcgj-cloud" options="-parameters" />
+      <module name="yndw-ycydjcgj-common-auth" options="-parameters" />
+      <module name="yndw-ycydjcgj-common-base" options="-parameters" />
+      <module name="yndw-ycydjcgj-common-core" options="-parameters" />
+      <module name="yndw-ycydjcgj-common-db" options="-parameters" />
+      <module name="yndw-ycydjcgj-common-log" options="-parameters" />
+      <module name="yndw-ycydjcgj-common-redis" options="-parameters" />
+      <module name="yndw-ycydjcgj-common-ribbon" options="-parameters" />
+      <module name="yndw-ycydjcgj-commons" options="-parameters" />
+      <module name="yndw-ycydjcgj-config" options="-parameters" />
+      <module name="yndw-ycydjcgj-gateway-service" options="-parameters" />
+      <module name="yndw-ycydjcgj-oauth-service" options="-parameters" />
+      <module name="yndw-ycydjcgj-services" options="-parameters" />
+      <module name="yndw-ycydjcgj-tool" options="-parameters" />
+      <module name="yndw-ycydjcgj-tool-xxljobadmin-service" options="-parameters" />
+      <module name="yndw-ycydjcgj-xtgl" options="-parameters" />
+      <module name="yndw-ycydjcgj-xtgl-auth-service" options="-parameters" />
+      <module name="yndw-ycydjcgj-xtgl-dm-service" options="-parameters" />
+      <module name="yndw-ycydjcgj-xtgl-file-service" options="-parameters" />
+      <module name="yndw-ycydjcgj-xtgl-log-service" options="-parameters" />
+    </option>
+  </component>
+</project>

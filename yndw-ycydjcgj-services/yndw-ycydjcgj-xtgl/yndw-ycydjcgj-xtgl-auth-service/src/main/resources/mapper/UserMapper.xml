@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yndw.dvp.xtgl.auth.mapper.UserMapper">
+    <insert id="insertUser" parameterType="com.yndw.dvp.xtgl.auth.model.User">
+        INSERT INTO `user` (
+            `id`,
+            `user_code`,
+            `user_name`,
+            `suo_id`,
+            `suo`,
+            `ju_id`,
+            `ju`,
+            `create_id`,
+            `create_name`,
+            `sjbhs`
+        )
+        VALUES
+            (
+                #{user.id},
+                #{user.userCode},
+                #{user.userName},
+                #{user.suoId},
+                #{user.suo},
+                #{user.juId},
+                #{user.ju},
+                #{user.createId},
+                #{user.createName},
+                #{user.sjbhs}
+            );
+    </insert>
+
+    <update id="updateUser" parameterType="com.yndw.dvp.xtgl.auth.model.User">
+        UPDATE `user`
+        SET `user_code` = #{user.userCode},
+            `user_name` = #{user.userName},
+            `update_id` = #{user.updateId},
+            `update_name` = #{user.updateName}
+        WHERE
+            `id` = #{user.id};
+    </update>
+
+
+    <delete id="removeById" parameterType="String">
+        DELETE FROM `user` where `id` = #{id};
+    </delete>
+</mapper>

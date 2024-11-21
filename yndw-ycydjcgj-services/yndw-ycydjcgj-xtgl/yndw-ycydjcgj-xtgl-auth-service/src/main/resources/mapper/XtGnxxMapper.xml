@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yndw.dvp.xtgl.auth.mapper.XtGnxxMapper">
+    <update id="updateZtdm">
+        update xt_gnxx set gnztdm = #{gnztdm},ztbgsj=now(),czrbh=#{czrbh},czsj=now() where bh = #{bh}
+    </update>
+
+    <update id="updateSjbhs">
+        UPDATE xt_gnxx SET
+        sjbh = #{sjbh},
+        sjbhs = #{sjbhs}
+        WHERE bh = #{bh}
+    </update>
+
+    <delete id="deleteCzyqxs">
+        delete from xt_czyqx where gnbh = #{gnbh}
+    </delete>
+
+    <delete id="deleteJsgngxs">
+        delete from xt_jsgngx where gnbh = #{gnbh}
+    </delete>
+
+    <select id="gnxxCount" resultType="com.yndw.dvp.xtgl.auth.dto.XtGnxxCountDto">
+        select b.totalCount as totalCount,a.upCount as upCount,(b.totalCount - a.upCount) as downCount from (select count(*) as upCount from xt_gnxx where gwztdm = '1') as a, (select count(*) as totalCount from xt_gnxx) b
+    </select>
+
+    <select id="sqgnxxByYybh" resultType="com.yndw.dvp.xtgl.auth.model.XtGnxx">
+        SELECT DISTINCT c.*
+        FROM xt_czyqx a
+                 left  JOIN xt_gnxx c ON a.gnbh= c.bh
+        WHERE ssyybh=#{yybh} and czybh={czybh}
+    </select>
+
+    <select id="wsqgnxxByYybh" resultType="com.yndw.dvp.xtgl.auth.model.XtGnxx">
+        SELECT *
+        FROM xt_gnxx
+        WHERE ssyybh=#{yybh}  and bh NOT IN(
+            ( select d.bh AS bh
+              FROM (
+                       SELECT 	DISTINCT c.bh
+                       FROM xt_czyqx a
+                                JOIN xt_gnxx c ON a.gnbh= c.bh
+                       WHERE ssyybh=#{yybh} and czybh={czybh )
+                       AS d
+            ))
+    </select>
+
+<!--    常用功能或者我的功能-->
+    <select id="myGnxx" resultType="com.yndw.dvp.xtgl.auth.model.XtGnxx">
+        SELECT *
+        FROM xt_gnxx a
+                 LEFT JOIN xt_czyqx b ON a.bh = b.gnbh
+        WHERE b.czybh = #{czybh}
+    </select>
+
+    <select id="searchGn" resultType="com.yndw.dvp.xtgl.auth.dto.SearchDto">
+        SELECT  gn.bh,gnmc mc,gnms ms,gn.cjsj,yymc cj,tb.tbbm tb  FROM xt_gnxx gn
+        JOIN xt_yyxx yy ON gn.ssyybh = yy.bh
+        JOIN xt_tbk tb ON gn.tbbh = tb.bh
+        WHERE gnmc LIKE CONCAT('%',#{wordKey},'%') OR gnms LIKE CONCAT('%',#{wordKey},'%') OR
+         ssyybh IN (SELECT  bh FROM xt_yyxx WHERE yymc LIKE CONCAT('%',#{wordKey},'%') OR yyms LIKE CONCAT('%',#{wordKey},'%'))
+    </select>
+<!--    <select id="myGnxx" resultType="com.yndw.dvp.xtgl.auth.dto.XtGnxxDto">-->
+<!--        select cz.gnbh,gnxx.gnmc,gnxx.gnms,yyxx.yymc-->
+<!--        from xt_czyqx as cz-->
+<!--                 JOIN (xt_gnxx as gnxx LEFT JOIN xt_tbk as tb on gnxx.tbbh = tb.bh-->
+<!--            JOIN xt_yyxx as yyxx on gnxx.ssyybh=yyxx.bh )-->
+<!--                      on cz.gnbh = gnxx.bh and cz.czybh = #{czybh} ORDER BY cz.usecount LIMIT 16-->
+<!--    </select>-->
+</mapper>

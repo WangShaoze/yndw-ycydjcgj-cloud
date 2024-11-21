@@ -1,0 +1,6 @@
+server:
+  port: 18003
+
+spring:
+  application:
+    name: yndw-ycydjcgj-xtgl-log-service

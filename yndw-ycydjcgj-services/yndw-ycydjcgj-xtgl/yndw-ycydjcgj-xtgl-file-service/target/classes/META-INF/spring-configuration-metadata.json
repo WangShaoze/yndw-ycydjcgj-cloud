@@ -1,0 +1,48 @@
+{
+  "groups": [
+    {
+      "name": "dvp.file-system",
+      "type": "com.yndw.dvp.xtgl.file.properties.FileProperties",
+      "sourceType": "com.yndw.dvp.xtgl.file.properties.FileProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "dvp.file-system.access-key",
+      "type": "java.lang.String",
+      "description": "密钥的key",
+      "sourceType": "com.yndw.dvp.xtgl.file.properties.FileProperties"
+    },
+    {
+      "name": "dvp.file-system.default-bucket",
+      "type": "java.lang.String",
+      "description": "默认的文件桶名称",
+      "sourceType": "com.yndw.dvp.xtgl.file.properties.FileProperties"
+    },
+    {
+      "name": "dvp.file-system.expire-seconds",
+      "type": "java.lang.Integer",
+      "description": "文件过期时间，默认：秒",
+      "sourceType": "com.yndw.dvp.xtgl.file.properties.FileProperties"
+    },
+    {
+      "name": "dvp.file-system.external-server-endpoint",
+      "type": "java.lang.String",
+      "description": "文件服务器的外网url（全路径，例如：http:\/\/172.29.3.29:9000）",
+      "sourceType": "com.yndw.dvp.xtgl.file.properties.FileProperties"
+    },
+    {
+      "name": "dvp.file-system.secret-key",
+      "type": "java.lang.String",
+      "description": "密钥的钥匙",
+      "sourceType": "com.yndw.dvp.xtgl.file.properties.FileProperties"
+    },
+    {
+      "name": "dvp.file-system.server-endpoint",
+      "type": "java.lang.String",
+      "description": "文件服务器的url（全路径，例如：http:\/\/127.0.0.1:9000）",
+      "sourceType": "com.yndw.dvp.xtgl.file.properties.FileProperties"
+    }
+  ],
+  "hints": []
+}

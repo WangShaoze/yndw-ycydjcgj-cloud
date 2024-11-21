@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.yndw</groupId>
+        <artifactId>yndw-ycydjcgj-commons</artifactId>
+        <version>1.0</version>
+    </parent>
+    <artifactId>yndw-ycydjcgj-common-base</artifactId>
+    <description>公共通用组件</description>
+    <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>com.yndw</groupId>
+            <artifactId>yndw-ycydjcgj-common-core</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.tencent.tsf</groupId>
+                    <artifactId>spring-cloud-tsf-swagger</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+</project>

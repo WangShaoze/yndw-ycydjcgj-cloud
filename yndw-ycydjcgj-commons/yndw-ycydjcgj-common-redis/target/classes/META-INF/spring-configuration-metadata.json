@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "dvp.cache-manager",
+      "type": "com.yndw.dvp.common.redis.properties.CacheManagerProperties",
+      "sourceType": "com.yndw.dvp.common.redis.properties.CacheManagerProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "dvp.cache-manager.configs",
+      "type": "java.util.List<com.yndw.dvp.common.redis.properties.CacheManagerProperties$CacheConfig>",
+      "sourceType": "com.yndw.dvp.common.redis.properties.CacheManagerProperties"
+    }
+  ],
+  "hints": []
+}

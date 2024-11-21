@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>yndw-ycydjcgj-services</artifactId>
+        <groupId>com.yndw</groupId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>yndw-ycydjcgj-tool</artifactId>
+    <packaging>pom</packaging>
+    <properties>
+        <mysql-connector-java.version>8.0.13</mysql-connector-java.version>
+    </properties>
+    <modules>
+        <module>yndw-ycydjcgj-tool-xxljobadmin-service</module>
+    </modules>
+
+
+</project>

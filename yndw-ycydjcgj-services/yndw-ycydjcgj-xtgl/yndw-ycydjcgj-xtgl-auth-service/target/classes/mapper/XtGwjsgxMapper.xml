@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yndw.dvp.xtgl.auth.mapper.XtGwjsgxMapper">
+    <delete id="deleteGwxxJsxx">
+        delete from xt_gwjsgx
+        <where>
+            <if test="gwbh != null">
+                and gwbh = #{gwbh}
+            </if>
+            <if test="jsbh != null">
+                and jsbh = #{jsbh}
+            </if>
+        </where>
+    </delete>
+
+    <select id="findJsbhsByGwbh" resultType="java.lang.String">
+        select r.bh from xt_jsxx r
+        inner join xt_gwjsgx ru on r.bh = ru.jsbh and ru.gwbh = #{gwbh}
+    </select>
+
+
+    <select id="findYybhsByGwbh" resultType="java.lang.String">
+        SELECT a.bh from xt_yyxx a left join (
+            select r.bh from xt_jsxx r inner join xt_gwjsgx ru on r.bh = ru.jsbh and ru.gwbh = #{gwbh}
+            ) as b
+            ON a.bh = b.bh
+    </select>
+</mapper>

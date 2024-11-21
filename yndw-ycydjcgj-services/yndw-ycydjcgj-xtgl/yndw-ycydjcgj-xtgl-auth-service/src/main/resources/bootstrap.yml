@@ -1,0 +1,6 @@
+server:
+  port: 18001
+
+spring:
+  application:
+    name: yndw-ycydjcgj-xtgl-auth-service

@@ -1,0 +1,27 @@
+{
+  "groups": [
+    {
+      "name": "dvp.security",
+      "type": "com.yndw.dvp.common.auth.properties.SecurityProperties",
+      "sourceType": "com.yndw.dvp.common.auth.properties.SecurityProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "dvp.security.auth",
+      "type": "com.yndw.dvp.common.auth.properties.AuthProperties",
+      "sourceType": "com.yndw.dvp.common.auth.properties.SecurityProperties"
+    },
+    {
+      "name": "dvp.security.code",
+      "type": "com.yndw.dvp.common.auth.properties.ValidateCodeProperties",
+      "sourceType": "com.yndw.dvp.common.auth.properties.SecurityProperties"
+    },
+    {
+      "name": "dvp.security.ignore",
+      "type": "com.yndw.dvp.common.auth.properties.PermitProperties",
+      "sourceType": "com.yndw.dvp.common.auth.properties.SecurityProperties"
+    }
+  ],
+  "hints": []
+}

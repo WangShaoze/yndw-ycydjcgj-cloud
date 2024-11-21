@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yndw.dvp.xtgl.auth.mapper.XtZzxxMapper">
+    <update id="updateZtdm">
+        update xt_zzxx set zzztdm = #{zzztdm},ztbgsj=now(),czrbh=#{czrbh},czsj=now() where bh = #{bh}
+    </update>
+    
+    <update id="updateSjbhs">
+        UPDATE xt_zzxx SET
+        sjbh = #{sjbh},
+        sjbhs = #{sjbhs}
+        WHERE bh = #{bh}
+    </update>
+
+    <select id="zzxxCount" resultType="com.yndw.dvp.xtgl.auth.dto.XtZzxxCountDto">
+        select b.totalCount as totalCount,a.upCount as upCount,(b.totalCount - a.upCount) as downCount from (select count(*) as upCount from xt_zzxx where gwztdm = '1') as a, (select count(*) as totalCount from xt_zzxx) b
+    </select>
+
+    <select id="getZzList" resultType="com.yndw.dvp.xtgl.auth.model.XtZzxx">
+        SELECT * FROM xt_zzxx
+        WHERE
+              1=1
+        <if test="sjbh != null and sjbh != ''">
+           AND sjbh = #{sjbh}
+        </if>
+
+    </select>
+</mapper>

@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "",
+      "type": "com.yndw.dvp.GatewayAppRun",
+      "sourceType": "com.yndw.dvp.GatewayAppRun"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}

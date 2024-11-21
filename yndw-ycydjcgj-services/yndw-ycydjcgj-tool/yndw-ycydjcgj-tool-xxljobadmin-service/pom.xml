@@ -1,0 +1,99 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>yndw-ycydjcgj-tool</artifactId>
+		<groupId>com.yndw</groupId>
+		<version>1.0</version>
+	</parent>
+	<artifactId>yndw-ycydjcgj-tool-xxljobadmin-service</artifactId>
+
+	<dependencies>
+		<!-- TSF 启动器 -->
+		<dependency>
+			<groupId>com.tencent.tsf</groupId>
+			<artifactId>spring-cloud-tsf-starter</artifactId>
+		</dependency>
+		<!-- TSF Auth 权限管理 -->
+		<dependency>
+			<groupId>com.tencent.tsf</groupId>
+			<artifactId>spring-cloud-tsf-auth</artifactId>
+		</dependency>
+		<!-- TSF Ribbon 客户端路由 -->
+		<dependency>
+			<groupId>com.tencent.tsf</groupId>
+			<artifactId>spring-cloud-tsf-route</artifactId>
+		</dependency>
+		<!-- TSF Logger 日志 -->
+		<dependency>
+			<groupId>com.tencent.tsf</groupId>
+			<artifactId>spring-cloud-tsf-logger</artifactId>
+		</dependency>
+		<!-- TSF swagger -->
+		<dependency>
+			<groupId>com.tencent.tsf</groupId>
+			<artifactId>spring-cloud-tsf-swagger</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.yndw</groupId>
+			<artifactId>yndw-ycydjcgj-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.yndw</groupId>
+			<artifactId>yndw-ycydjcgj-common-base</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.yndw</groupId>
+			<artifactId>yndw-ycydjcgj-common-db</artifactId>
+		</dependency>
+
+		<!-- freemarker-starter -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
+
+		<!-- mail-starter -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+
+		<!-- xxl-job-core -->
+		<dependency>
+			<groupId>com.xuxueli</groupId>
+			<artifactId>xxl-job-core</artifactId>
+		</dependency>
+		<!-- mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql-connector-java.version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.xxl.job.admin.ToolXxlJobAdminAppRun</mainClass>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
