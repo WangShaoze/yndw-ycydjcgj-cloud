@@ -11,7 +11,7 @@
  Target Server Version : 50744
  File Encoding         : 65001
 
- Date: 21/11/2024 20:07:55
+ Date: 28/11/2024 09:14:21
 */
 
 SET NAMES utf8mb4;
@@ -97,8 +97,10 @@ INSERT INTO `oauth_login_log` VALUES ('346aaf67decb404d0e5b2f8c707057eb', '1', '
 INSERT INTO `oauth_login_log` VALUES ('362ca8dc986c2ee32fb10d076635d54d', '44c4515a38406b06fdd9e49571e8863d', 'cjgly-cjgly', NULL, '登入', '192.168.208.1', '2024-11-19 10:19:20.644');
 INSERT INTO `oauth_login_log` VALUES ('37738416dad667ebec5708e747bf18b6', '44c4515a38406b06fdd9e49571e8863d', 'cjgly-cjgly', NULL, '登出', '127.0.0.1', '2024-11-19 08:56:13.486');
 INSERT INTO `oauth_login_log` VALUES ('37746c8994ed1d8c1ad4a6611eab8606', '44c4515a38406b06fdd9e49571e8863d', 'cjgly-cjgly', NULL, '登入', '192.168.208.1', '2024-11-21 17:28:46.004');
+INSERT INTO `oauth_login_log` VALUES ('3f63adf69601920cc6c349c8fb9a4338', '1', 'ycydjcgjgly', NULL, '登入', '192.168.208.1', '2024-11-27 16:38:48.095');
 INSERT INTO `oauth_login_log` VALUES ('41495ed283ba8be7cfa92813f6724a60', '1', 'ycydjcgjgly', NULL, '登出', '127.0.0.1', '2024-11-18 19:02:26.257');
 INSERT INTO `oauth_login_log` VALUES ('4387dcb03c96aba088f0f182aa4263e8', '1', 'ycydjcgjgly', NULL, '登入', '192.168.208.1', '2024-11-20 14:39:51.743');
+INSERT INTO `oauth_login_log` VALUES ('45c5bf0bee54eb3ac5cc29cafdefd376', '1', 'ycydjcgjgly', NULL, '登入', '192.168.208.1', '2024-11-27 09:04:55.576');
 INSERT INTO `oauth_login_log` VALUES ('4848a0e5b84d9f4c247111dfa2100cff', '1', 'ycydjcgjgly', NULL, '登入', '192.168.208.1', '2024-11-18 18:51:54.525');
 INSERT INTO `oauth_login_log` VALUES ('49a3d0c14faf603e63f12a1c12c9b5cd', '44c4515a38406b06fdd9e49571e8863d', 'cjgly-cjgly', NULL, '登出', '127.0.0.1', '2024-11-19 09:32:21.429');
 INSERT INTO `oauth_login_log` VALUES ('4a098ec5f23338b97b7ccb6d4f192cd8', '1', 'ycydjcgjgly', NULL, '登入', '192.168.208.1', '2024-11-19 09:32:29.782');
@@ -141,6 +143,7 @@ INSERT INTO `oauth_login_log` VALUES ('8a4d97efc27b221dc34e1ca66b0b2cd3', '44c45
 INSERT INTO `oauth_login_log` VALUES ('8ac3010bfd12142cb8f6c67126d9791b', '2417d1aa5f170326c4c649c8f4ed177c', 'dhgds-gly', NULL, '登出', '127.0.0.1', '2024-11-21 17:10:37.401');
 INSERT INTO `oauth_login_log` VALUES ('8e5b905692f642ac56c132a9739eb5e0', '1', 'ycydjcgjgly', NULL, '登出', '127.0.0.1', '2024-11-19 09:21:42.563');
 INSERT INTO `oauth_login_log` VALUES ('8fabaf48a05f98976ef70c58bb44d4d3', '1', 'ycydjcgjgly', NULL, '登入', '192.168.208.1', '2024-11-19 14:46:48.995');
+INSERT INTO `oauth_login_log` VALUES ('928ac4150a6c5ea7c7a0a28dfbde0191', '1', 'ycydjcgjgly', NULL, '登出', '127.0.0.1', '2024-11-27 16:38:39.563');
 INSERT INTO `oauth_login_log` VALUES ('93751e7b62194f0e7b7ee22a5adea549', 'c2e5e510d726181fc5820e80903ecb1b', 'khjsj-gly', NULL, '登入', '192.168.208.1', '2024-11-21 09:45:41.816');
 INSERT INTO `oauth_login_log` VALUES ('94c95f48b5097456b3a324ea506fe535', '1', 'ycydjcgjgly', NULL, '登入', '192.168.208.1', '2024-11-19 09:49:06.314');
 INSERT INTO `oauth_login_log` VALUES ('97675720dce5103b217efbf3cbde8e2c', '1', 'ycydjcgjgly', NULL, '登出', '127.0.0.1', '2024-11-19 08:47:23.804');
@@ -150,6 +153,7 @@ INSERT INTO `oauth_login_log` VALUES ('9e5e61788cbcae403af80ea294ea165a', '44c45
 INSERT INTO `oauth_login_log` VALUES ('a611c4715b48492ff6bd0b4cfb8cba34', '1', 'ycydjcgjgly', NULL, '登出', '127.0.0.1', '2024-11-21 18:19:07.268');
 INSERT INTO `oauth_login_log` VALUES ('a760805a11bf72c45bfe33220ef0726c', '1', 'ycydjcgjgly', NULL, '登入', '192.168.208.1', '2024-11-18 19:10:17.454');
 INSERT INTO `oauth_login_log` VALUES ('a9f3f4a39cac58a12d5ddb5dc433422c', '44c4515a38406b06fdd9e49571e8863d', 'cjgly-cjgly', NULL, '登出', '127.0.0.1', '2024-11-21 18:03:50.303');
+INSERT INTO `oauth_login_log` VALUES ('aa04ac1479df45fda8b29666130e9ea9', '1', 'ycydjcgjgly', NULL, '登入', '192.168.208.1', '2024-11-28 08:51:50.183');
 INSERT INTO `oauth_login_log` VALUES ('aa169c513d8b84ddbc1e844cd238a6d3', '44c4515a38406b06fdd9e49571e8863d', 'cjgly-cjgly', NULL, '登出', '127.0.0.1', '2024-11-20 17:08:37.425');
 INSERT INTO `oauth_login_log` VALUES ('ab988af5ebd576cd5d952b2f021afb68', '1', 'ycydjcgjgly', NULL, '登出', '127.0.0.1', '2024-11-21 08:54:35.03');
 INSERT INTO `oauth_login_log` VALUES ('ac9853074c148469be5abba690be80d5', '1', 'ycydjcgjgly', NULL, '登入', '192.168.208.1', '2024-11-20 09:18:29.187');
@@ -160,6 +164,7 @@ INSERT INTO `oauth_login_log` VALUES ('c2b72c874ba6d56d826f15b6242f59a3', '1', '
 INSERT INTO `oauth_login_log` VALUES ('c5274eadd13808e703091533c6dfa11e', '44c4515a38406b06fdd9e49571e8863d', 'cjgly-cjgly', NULL, '登出', '127.0.0.1', '2024-11-19 09:19:18.166');
 INSERT INTO `oauth_login_log` VALUES ('c9c4a6a178a5b8c70ebc29f6e4eff4d6', '44c4515a38406b06fdd9e49571e8863d', 'cjgly-cjgly', NULL, '登入', '192.168.208.1', '2024-11-19 08:56:32.242');
 INSERT INTO `oauth_login_log` VALUES ('d0159affcdf4f5afc714e354959deef8', '44c4515a38406b06fdd9e49571e8863d', 'cjgly-cjgly', NULL, '登入', '192.168.208.1', '2024-11-21 16:27:58.379');
+INSERT INTO `oauth_login_log` VALUES ('d04d79f0d290a81ffe1f30ce94bcd247', '1', 'ycydjcgjgly', NULL, '登入', '192.168.208.1', '2024-11-27 16:30:15.997');
 INSERT INTO `oauth_login_log` VALUES ('d2139b608d9f8656906ac71f74a3a6ca', '1', 'ycydjcgjgly', NULL, '登入', '192.168.208.1', '2024-11-21 09:03:19.515');
 INSERT INTO `oauth_login_log` VALUES ('d37875e4cb044560c3368ff3a67858cf', '44c4515a38406b06fdd9e49571e8863d', 'cjgly-cjgly', NULL, '登入', '192.168.208.1', '2024-11-19 16:36:13.392');
 INSERT INTO `oauth_login_log` VALUES ('d7e65cbfe3e08b7957c10e7f7d8e7742', 'c2e5e510d726181fc5820e80903ecb1b', 'khjsj-gly', NULL, '登入', '192.168.208.1', '2024-11-21 11:05:42.515');
