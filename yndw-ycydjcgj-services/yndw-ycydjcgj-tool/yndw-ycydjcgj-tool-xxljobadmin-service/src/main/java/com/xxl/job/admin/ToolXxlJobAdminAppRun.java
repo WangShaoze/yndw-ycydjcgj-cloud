@@ -8,7 +8,6 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.cloud.tsf.route.annotation.EnableTsfRoute;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.tsf.annotation.EnableTsf;
 import org.springframework.tsf.auth.annotation.EnableTsfAuth;
 import org.springframework.tsf.ratelimit.annotation.EnableTsfRateLimit;
